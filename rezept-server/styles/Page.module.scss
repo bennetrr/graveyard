@@ -1,0 +1,22 @@
+@use 'variables';
+
+.container {
+  height: 100vh;
+  background-color: variables.$background-color;
+  color: variables.$font-color;
+}
+
+@mixin page_content_mixin($height: 100vh) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: $height;
+}
+
+.page_content {
+    @include page_content_mixin(calc(100vh - variables.$header-height));
+}
+
+.empty_page_content {
+    @include page_content_mixin;
+}

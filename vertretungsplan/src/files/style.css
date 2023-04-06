@@ -1,0 +1,213 @@
+:root{
+  --grün: #00aa55; /*var(--grün)*/
+  --dunkelgrün: #008844; /*var(--dunkelgrün)*/
+  --rot: #FF0000; /*var(--rot)*/
+  --dunkelrot: #B20000; /*var(--dunkelrot)*/
+  --grau: #282c34; /*var(--grau)*/
+  --hellgrau: #52565C; /*var(--hellgrau)*/
+  --weiß: #ffffff; /*var(--weiß)*/
+  --schwarz: #000000; /*var(--schwarz)*/
+}
+
+/*Text*/
+body{
+	font-family: arial, sans-serif;
+}
+
+h1 {
+	text-align: center;
+}
+
+h3 {
+	color: var(--grün);
+}
+
+.errormessage {
+	color: var(--rot);
+	font-size: 20px
+}
+
+/*Tabellen*/
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+td, th {
+	border: 1px solid var(--hellgrau);
+	text-align: left;
+	padding: 8px;
+}
+
+th {
+	text-align: center;
+}
+
+/*Popup für Seiten users und edit*/
+#editpopup_content {
+	height: 75%;
+	width: 75%;
+}
+
+#editpopupiframe {
+	border: none;
+	width: 100%;
+	height: 100%;
+}
+
+/*Popup*/
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+  padding-top: 60px;
+}
+
+.modal-content {
+  background-color: var(--weiß);
+  margin: 5% auto 15% auto;
+  border: 1px solid var(--hellgrau);
+  width: 50%;
+}
+
+.container {
+  padding: 16px;
+  height: 100%;
+}
+
+/*Popup: Animation*/
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)}
+  to {-webkit-transform: scale(1)}
+}
+
+@keyframes animatezoom {
+  from {transform: scale(0)}
+  to {transform: scale(1)}
+}
+
+/*Buttons*/
+.button:link, .button:visited {
+  background-color: var(--grün);
+  color: var(--weiß);
+  padding: 15px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.button:hover, .button:active {
+  background-color: var(--grün);
+}
+
+.cancelbutton:link, .cancelbutton:visited {
+  background-color: var(--rot);
+  color: var(--weiß);
+  padding: 15px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+
+.cancelbutton:hover, .cancelbutton:active {
+  background-color: var(--dunkelrot);
+}
+
+/*Formularfelder*/
+input {
+	height: 30px;
+	border: 3px solid var(--grün);
+	border-radius: 5px;
+	width: 100%;
+}
+
+input:focus, input:hover{
+	border: 3px solid var(--grün);
+}
+
+input[type="checkbox"]{
+	-moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 7px;
+  border: 3px solid var(--grün);
+  background-color: var(--weiß);
+  display: block;
+  content: "";
+  float: left;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+input[type="checkbox"]:checked{
+	box-shadow: inset 0px 0px 0px 4px var(--weiß);
+  background-color: var(--grün);
+	border: 3px solid var(--grün);
+}
+
+input[type="checkbox"]:focus, input[type="checkbox"]:hover{
+	border: 3px solid var(--grün);
+}
+
+input[type="checkbox"]:focus:checked, input[type="checkbox"]:hover:checked{
+	box-shadow: inset 0px 0px 0px 4px var(--weiß);
+  background-color: var(--grün);
+	border: 3px solid var(--grün);
+}
+
+input[type='submit']{
+	border: none;
+	width: 128px;
+	height: 49px;
+	background-color: var(--grün);
+  color: var(--weiß);
+  padding: 15px 25px;
+  text-align: center;
+	border-radius: 0px;
+	font-size: 16px
+}
+
+input[type='submit']:hover, input[type='submit']:active {
+  background-color: var(--grün);
+}
+
+select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  border: 3px solid var(--grün);
+  border-radius: 5px;
+  cursor: pointer;
+  height: 40px;
+  padding-left: 10px;
+  width: 100%;
+	background-color: var(--weiß);
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+select:focus::-ms-value {
+  background-color: transparent;
+}
+
+select:focus, select:hover{
+	border: 3px solid var(--grün);
+}

@@ -3,7 +3,7 @@
 # This file should be included when you package your plugin.# Mandatory items:
 
 [general]
-name=Flurstück-Suche
+name=Flurstückssuche
 qgisMinimumVersion=3.0
 description=Dieses Plugin stellt eine Geocoding-ähnliche Suche nach Flurstücken bereit
 version=0.1
@@ -12,8 +12,8 @@ email=bennet.ranft@outlook.de
 
 about=Dieses Plugin stellt eine Geocoding-ähnliche Suche nach Flurstücken bereit.
 
-tracker=https://github.com/bennet-r/flurstuecksuche/issues
-repository=https://github.com/bennet-r/flurstuecksuche
+tracker=https://github.com/bennetrr/graveyard/issues
+repository=https://github.com/bennetrr/graveyard/flurstueckssuche
 # End of mandatory metadata
 
 # Recommended items:
@@ -25,7 +25,7 @@ hasProcessingProvider=no
 # Tags are comma separated with spaces allowed
 tags=geocoding, inspire
 
-homepage=https://github.com/bennet-r/flurstuecksuche
+homepage=https://github.com/bennetrr/graveyard/flurstueckssuche
 category=Plugins
 icon=icon.png
 # experimental flag

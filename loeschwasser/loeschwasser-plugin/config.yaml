@@ -1,0 +1,11 @@
+export:
+  kml:
+    color_leitungen: '#1d20aa'
+    icon_brunnen: "D:\\coding\\L\xF6schwasser\\Styles\\Brunnen.png"
+    icon_hydranten: "D:\\coding\\L\xF6schwasser\\Styles\\Hydranten.png"
+    output_file: "D:\\coding\\L\xF6schwasser\\Scripts\\l\xF6schwasser.kmz"
+    width_leitungen: 10.0
+layers:
+  brunnen: "L\xF6schbrunnen"
+  hydranten: Hydranten
+  leitungen: Leitungen

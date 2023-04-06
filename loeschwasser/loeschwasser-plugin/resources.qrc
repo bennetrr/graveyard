@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/plugins/loeschwasser" >
+        <file>icon.png</file>
+    </qresource>
+</RCC>

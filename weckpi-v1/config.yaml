@@ -1,0 +1,49 @@
+alarmtimes:
+  Fri:
+    active: true
+    music:
+      type: internetradio
+      url: http://stream.laut.fm/synthpop
+    time: 07:30
+  Mon:
+    active: true
+    music:
+      type: internetradio
+      url: http://stream.laut.fm/synthpop
+    time: 06:15
+  Sat:
+    active: true
+    music:
+      type: internetradio
+      url: http://stream.laut.fm/synthpop
+    time: 08:30
+  Sun:
+    active: true
+    music:
+      type: internetradio
+      url: http://stream.laut.fm/synthpop
+    time: 09:00
+  Thu:
+    active: true
+    music:
+      type: internetradio
+      url: http://stream.laut.fm/synthpop
+    time: 06:15
+  Tue:
+    active: true
+    music:
+      type: internetradio
+      url: http://stream.laut.fm/synthpop
+    time: 06:15
+  Wed:
+    active: true
+    music:
+      type: internetradio
+      url: http://stream.laut.fm/synthpop
+    time: 06:15
+  override:
+    active: false
+    music:
+      type: internetradio
+      url: http://stream.laut.fm/synthpop
+    time: 08:00

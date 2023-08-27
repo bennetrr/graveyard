@@ -3,9 +3,9 @@ Own module to controll libvlc for python (python-vlc).
 Depends on python-vlc and vlc itself.
 """
 import random
-import xml.etree.ElementTree as etree
 
 import vlc
+import json
 
 XSPF_NAMESPACE = "http://xspf.org/ns/0/"
 
@@ -47,17 +47,6 @@ class BasePlayer:
 		"""Play previous track"""
 		self.player.previous()
 
-	def set_volume(self, volume: int):
-		"""
-		Set volume
-
-		:param volume: An integer in the range from 0 to 100
-		:raise VolumeError: If volume is less than 0 or greater than 100
-		"""
-		if not 0 <= volume <= 100:
-			raise VolumeError("Volume must be in the range from 0 to 100")
-		self.player.get_media_player().audio_set_volume(volume)
-
 
 class Playlist(BasePlayer):
 	def __init__(self, source):
@@ -73,16 +62,25 @@ class Playlist(BasePlayer):
 		self.player.set_media_list(self.medialist)
 
 	def load_playlist(self):
-		self.medialist.add_media(self.source)
+		media_locations = json.load(open(self.source))
+
+		for media_location in media_locations:
+			self.medialist.add_media(media_location)
+
+	def set_volume(self, volume: int):
+		"""
+		Set volume
+		:param volume: An integer in the range from 0 to 100
+		:raise VolumeError: If volume is less than 0 or greater than 100
+		"""
+		if not 0 <= volume <= 100:
+			raise VolumeError("Volume must be in the range from 0 to 100")
+		self.player.get_media_player().audio_set_volume(volume)
 
 
 class RandomPlaylist(Playlist):
 	def load_playlist(self):
-		media_locations = [
-			element.text
-			for element in
-			etree.parse(self.source).findall("xspf:trackList/xspf:track/xspf:location", {"xspf": XSPF_NAMESPACE}, )
-		]
+		media_locations = json.load(open(self.source))
 		random.shuffle(media_locations)
 		for media_location in media_locations:
 			self.medialist.add_media(media_location)
@@ -119,3 +117,13 @@ class InternetRadio(BasePlayer):
 
 	def previous(self):
 		pass
+
+	def set_volume(self, volume: int):
+		"""
+		Set volume
+		:param volume: An integer in the range from 0 to 100
+		:raise VolumeError: If volume is less than 0 or greater than 100
+		"""
+		if not 0 <= volume <= 100:
+			raise VolumeError("Volume must be in the range from 0 to 100")
+		self.player.audio_set_volume(volume)

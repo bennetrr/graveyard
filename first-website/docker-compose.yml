@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  webserver:
+    image: php:8.2.12-apache-bookworm
+    container_name: first-webserver
+    ports:
+    - '3456:80'
+    volumes:
+      - '$PWD/src:/var/www/html'
+      - '$PWD/website.inc.php:/var/www/php/website.inc.php'
+    networks:
+      - first-website
+
+  database:
+    image: mysql:8.2.0
+    container_name: first-database
+    volumes:
+      - '$PWD/website.sql:/docker-entrypoint-initdb.d/website.sql'
+    networks:
+      - first-website
+    environment:
+      - MYSQL_ROOT_PASSWORD=somepassword
+
+networks:
+  first-website:

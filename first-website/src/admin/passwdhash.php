@@ -48,11 +48,11 @@
    <body>
     <h1 class="sitetitle">Admin-Bereich</h1>
     <?php
-      session_start();
-      if(!isset($_SESSION['loggedin'])) {
-        header("Location: index.php");
-        die();
-      }
+      // session_start();
+      // if(!isset($_SESSION['loggedin'])) {
+      //   header("Location: index.php");
+      //   die();
+      // }
     ?>
     <div id="window">
       <p id="chat">

@@ -26,23 +26,23 @@
   <body>
     <h1 class="sitetitle">Admin-Bereich</h1>
     <?php
-      session_start();
-      if(!isset($_SESSION['loggedin'])) {
-          echo "<div style='width: 35%; margin: 5% auto 15% auto;'>
-                  <form style='width: 100%;' onsubmit='return check_passwd()''  action='login.php' method='post'>
-                    <p class='subtitle-center'>Sie sind nicht angemeldet!</p>
-                    <p class='text-center'>Sie müssen sich anmelden, um auf die Serververwaltung zuzugreifen.</p>
-                    <input id='passwd_feld' style='width: 100%;' type='password' placeholder='Passwort eingeben' name='passwort'>
-                    <p id='passwd_error' style='color: #c7031b; font-size: 14px;'></p>
-                    <input class='submit-button' type='submit' value='Anmelden'>
-                    <input class='reset-button' type='reset' onclick='clear_passwd_error()'>
-                  </form>
-                </div>";
-        if($_GET["passwd_false"] == "true"){
-          echo "<script>document.getElementById('passwd_error').innerText = 'Das Passwort war falsch!';</script>";
-        }
-      die();
-      }
+      // session_start();
+      // if(!isset($_SESSION['loggedin'])) {
+      //     echo "<div style='width: 35%; margin: 5% auto 15% auto;'>
+      //             <form style='width: 100%;' onsubmit='return check_passwd()''  action='login.php' method='post'>
+      //               <p class='subtitle-center'>Sie sind nicht angemeldet!</p>
+      //               <p class='text-center'>Sie müssen sich anmelden, um auf die Serververwaltung zuzugreifen.</p>
+      //               <input id='passwd_feld' style='width: 100%;' type='password' placeholder='Passwort eingeben' name='passwort'>
+      //               <p id='passwd_error' style='color: #c7031b; font-size: 14px;'></p>
+      //               <input class='submit-button' type='submit' value='Anmelden'>
+      //               <input class='reset-button' type='reset' onclick='clear_passwd_error()'>
+      //             </form>
+      //           </div>";
+      //   if($_GET["passwd_false"] == "true"){
+      //     echo "<script>document.getElementById('passwd_error').innerText = 'Das Passwort war falsch!';</script>";
+      //   }
+      // die();
+      // }
     ?>
     <div class="pic-slide-segment">
       <div class="pic-slide-container">

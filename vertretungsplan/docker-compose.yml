@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  webserver:
+    image: php:8.2.12-apache-bookworm
+    container_name: vertretungsplan-webserver
+    ports:
+    - '3456:80'
+    volumes:
+      - '$PWD/src:/var/www/html'
+      - '$PWD/vertretungsplan.inc.php:/var/www/php/vertretungsplan.inc.php'
+    networks:
+      - vertretungsplan
+
+  database:
+    image: mysql:8.2.0
+    container_name: vertretungsplan-database
+    volumes:
+      - '$PWD/website.sql:/docker-entrypoint-initdb.d/vertretungsplan.sql'
+    networks:
+      - vertretungsplan
+    environment:
+      - MYSQL_ROOT_PASSWORD=somepassword
+
+networks:
+  vertretungsplan:

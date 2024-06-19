@@ -28,8 +28,9 @@ info "Installing dependencies"
 info "Installing htop"
 info "Installing git"
 info "Installing zsh"
+info "Installing tmux"
 info "Installing unattended-upgrades"
-apt install -y apt-transport-https ca-certificates curl debian-archive-keyring debian-keyring git gnupg htop lsb-release unzip zip zsh unattended-upgrades
+apt install -y apt-transport-https ca-certificates curl debian-archive-keyring debian-keyring git git-lfs gnupg htop lsb-release unzip zip zsh tmux unattended-upgrades
 #endregion
 
 #region GitHub CLI

@@ -1,0 +1,5 @@
+test-projects
+test-projects.bak
+*.sarif
+*.clef
+**/pycache

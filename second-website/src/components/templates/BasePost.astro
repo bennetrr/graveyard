@@ -1,0 +1,17 @@
+---
+import type {IBlogPostFrontmatter} from '$/types';
+import Base from '$/components/templates/Base.astro';
+import BlogPost from '$/components/organisms/BlogPost.astro';
+
+interface Props {
+  content: IBlogPostFrontmatter;
+}
+
+const {content} = Astro.props as Props;
+---
+
+<Base title={`${content.title} | bennetr`} description={content.description}>
+  <BlogPost frontmatter={content}>
+    <slot/>
+  </BlogPost>
+</Base>

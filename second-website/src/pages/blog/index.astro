@@ -1,0 +1,16 @@
+---
+import Section from '$/components/atoms/Section.astro';
+import {default as GT} from '$/components/atoms/GradientText.astro';
+import BlogPostList from '$/components/organisms/BlogPostList.astro';
+import Base from '$/components/templates/Base.astro';
+---
+
+<Base title="Blog Posts | bennetr" description="bennetr's Homepage">
+  <Section>
+    <Fragment slot="title">
+      All <GT>Blog Posts</GT>
+    </Fragment>
+
+    <BlogPostList/>
+  </Section>
+</Base>

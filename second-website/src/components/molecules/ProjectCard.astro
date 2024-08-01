@@ -1,0 +1,48 @@
+---
+import type {ICategory, IImage} from '$/types';
+import Category from '$/components/atoms/Category.astro';
+
+interface Props {
+  name: string;
+  description?: string;
+  url: string;
+  image?: IImage;
+  categories: ICategory[];
+}
+
+const {name, description, url, image, categories} = Astro.props;
+---
+
+<a href={url} target="_blank">
+  <article class="hover:translate-y-1 flex flex-col gap-x-8 rounded-md bg-stone-800 p-3 md:flex-row min-h-[88px]">
+
+    {!image ? null :
+      <div class="shrink-0">
+        <img
+          class="h-36 w-36 hover:translate-y-1"
+          src={image.src}
+          alt={image.alt}
+          loading="lazy"
+        />
+      </div>
+    }
+
+    <div>
+      <div class="flex flex-col items-center gap-y-2 md:flex-row">
+        <h3 class="text-xl font-semibold">
+          {name}
+        </h3>
+
+        <div class="ml-3 flex flex-wrap gap-2">
+          {categories.map(category =>
+            <Category name={category.name} color={category.color}/>
+          )}
+        </div>
+      </div>
+
+      <p class="mt-3 text-gray-400">
+        {description || ""}
+      </p>
+    </div>
+  </article>
+</a>

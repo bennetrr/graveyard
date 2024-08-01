@@ -1,0 +1,11 @@
+---
+import type {ICategory} from '$/types';
+
+interface Props extends ICategory {}
+
+const {name, color} = Astro.props;
+---
+
+<div class={`rounded-md px-2 py-1 text-xs font-semibold ${color}`}>
+  {name}
+</div>

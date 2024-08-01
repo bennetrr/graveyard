@@ -1,0 +1,24 @@
+---
+import {type IBlogPostFrontmatter, comparePosts} from '$/types';
+import BlogPostCard from '$/components/molecules/BlogPostCard.astro';
+
+interface Props {
+  numberOfPosts?: number;
+}
+
+const {numberOfPosts} = Astro.props;
+
+let posts = (await Astro.glob<IBlogPostFrontmatter>('../../pages/blog/*.md'))
+  .filter(post => !post.frontmatter.hidden)
+  .sort(comparePosts);
+
+if (numberOfPosts) {
+  posts = posts.slice(0, numberOfPosts);
+}
+---
+
+<div class="grid grid-cols-1 gap-6 md:grid-cols-3">
+  {posts.map(post =>
+    <BlogPostCard {post}/>
+  )}
+</div>

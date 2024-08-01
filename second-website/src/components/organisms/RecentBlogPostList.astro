@@ -1,0 +1,23 @@
+---
+import Section from '$/components/atoms/Section.astro';
+import {default as GT} from '$/components/atoms/GradientText.astro';
+import BlogPostList from '$/components/organisms/BlogPostList.astro';
+---
+
+<Section>
+  <Fragment slot="title">
+    <div class="flex items-baseline justify-between">
+      <span>
+        Recent <GT>Blog Posts</GT>
+      </span>
+
+      <a href="/blog/">
+        <span class="text-sm">
+          View all Posts →
+        </span>
+      </a>
+    </div>
+  </Fragment>
+
+  <BlogPostList numberOfPosts={3}/>
+</Section>

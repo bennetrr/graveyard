@@ -1,0 +1,40 @@
+---
+import {DateTime} from 'luxon';
+
+import type {IBlogPostMarkdownInstance} from '$/types';
+
+interface Props {
+  post: IBlogPostMarkdownInstance;
+}
+
+const {post: {url, frontmatter: {title, description, publicationDate, image}}} = Astro.props;
+---
+
+<a href={url}>
+  <article class="hover:translate-y-1 overflow-hidden rounded-md bg-stone-800">
+    {!image ? null :
+      <div class="aspect-w-3 aspect-h-2">
+        <img
+          class="h-full w-full object-cover object-center"
+          src={image.src}
+          alt={image.alt}
+          loading="lazy"
+        />
+      </div>
+    }
+
+    <div class="px-3 pt-4 pb-6 text-center">
+      <h3 class="text-xl font-semibold">
+        {title}
+      </h3>
+
+      <p class="mt-1 text-xs text-gray-400">
+        {DateTime.fromISO(publicationDate).toLocaleString(DateTime.DATE_MED)}
+      </p>
+
+      <p class="mt-2 text-sm">
+        {description}
+      </p>
+    </div>
+  </article>
+</a>

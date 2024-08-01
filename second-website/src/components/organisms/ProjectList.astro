@@ -1,0 +1,93 @@
+---
+import {Categories} from '$/types';
+import Section from '$/components/atoms/Section.astro';
+import {default as GT} from '$/components/atoms/GradientText.astro';
+import ProjectCard from '$/components/molecules/ProjectCard.astro';
+---
+
+<Section>
+  <Fragment slot="title">
+     <div class="flex items-baseline justify-between">
+      <span>
+        My <GT>Projects</GT>
+      </span>
+
+      <a href="https://github.com/bennetrr/?tab=repositories">
+        <span class="text-sm">
+          View all Projects →
+        </span>
+      </a>
+    </div>
+  </Fragment>
+
+  <div class="flex flex-col gap-6">
+    <ProjectCard
+      name="WeckPi"
+      description="Extensible alarm clock software built for the Raspberry Pi with music streaming and other cool features."
+      url="https://github.com/bennetrr/weckpi/tree/dev"
+      categories={[
+        Categories.PYTHON,
+        Categories.JAVASCRIPT,
+        Categories.SVELTE_KIT
+      ]}
+    />
+
+    <ProjectCard
+      name="Bedwars"
+      description="Hypixel-inspired bedwars plugin for Minecraft 1.17.1 build for Paper servers."
+      url="https://github.com/bennetrr/bedwars"
+      categories={[
+        Categories.JAVA,
+        Categories.MINECRAFT,
+        Categories.BUKKIT
+      ]}
+    />
+
+    <!--<ProjectCard
+      name="LegoApp"
+      description="Web app that helps to check if all parts of a Lego set are present."
+      url="https://github.com/bennetrr/lego"
+      categories={[
+        Categories.CSHARP,
+        Categories.JAVASCRIPT,
+        Categories.REACT
+      ]}
+    />-->
+
+    <ProjectCard
+      name="Softroboter Docs"
+      description="Documentation for our Softroboter project, a gripper made out of elastomer, mounted to a robot arm."
+      url="https://softroboter.docs.bennetr.me"
+      categories={[
+        Categories.LANG_GER,
+        Categories.SCHOOL,
+        Categories.JAVASCRIPT,
+        Categories.ASTRO_STARLIGHT
+      ]}
+    />
+
+    <ProjectCard
+      name="Lesetagebuch: Franz Kafka - Der Process"
+      url="https://der-process.bennetr.me"
+      categories={[
+        Categories.LANG_GER,
+        Categories.SCHOOL,
+        Categories.JAVASCRIPT,
+        Categories.REACT,
+        Categories.NEXT_JS
+      ]}
+    />
+
+    <ProjectCard
+      name="Covid Simulation"
+      description="Simulate the course of a COVID-19 infection wave with many parameters and settings. "
+      url="https://softroboter.docs.bennetr.me"
+      categories={[
+        Categories.LANG_GER,
+        Categories.SCHOOL,
+        Categories.JAVA,
+        Categories.GREENFOOT
+      ]}
+    />
+  </div>
+</Section>

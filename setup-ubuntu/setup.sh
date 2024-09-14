@@ -30,7 +30,8 @@ info "Installing git"
 info "Installing zsh"
 info "Installing tmux"
 info "Installing unattended-upgrades"
-apt install -y apt-transport-https ca-certificates curl debian-archive-keyring debian-keyring git git-lfs gnupg htop lsb-release unzip zip zsh tmux unattended-upgrades
+info "Installing nvim"
+apt install -y apt-transport-https ca-certificates curl debian-archive-keyring debian-keyring git git-lfs gnupg htop lsb-release unzip zip zsh tmux unattended-upgrades nvim
 #endregion
 
 #region GitHub CLI
